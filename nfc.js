@@ -86,7 +86,8 @@ canvas.addEventListener("click", function(){
 
 function generate() {
     function value(id, def) {
-        return parseFloat(document.getElementById(id).value) || def;
+        var val = document.getElementById(id).value;
+        return val.length > 0 ? parseFloat(val) : def;
     }
     nfc(canvas,
         value("margin", 20),
