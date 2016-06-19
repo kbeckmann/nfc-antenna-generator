@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <style>
-
-      * {
-          margin: 10pt
-        }
-
       input[type="text"]
       {
          width: 300px;
@@ -24,8 +18,8 @@
         <input type="text" id="ant_width" placeholder="Antenna width (default=20)" /><br/>
         <input type="text" id="cond_width" placeholder="Conductor width in mm (default=0.6)" /><br/>
         <input type="text" id="cond_spacing" placeholder="Conductor spacing in mm (default=0.6)" /><br/>
-        <input type="submit" id="generate" value="Generate!" />
-        <a id="downloadLnk" href="nfc.png">Download PNG</a>
+        <input type="submit" id="generate" value="Generate!" onsubmit="" />
+        <a id="downloadLnk" href="nfc.png">Download PNG</a><br/>
         <canvas id="canvas"/>
     </form>
     <script src="./nfc.js"></script>
