@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+
+      * {
+          margin: 10pt
+        }
+
+      input[type="text"]
+      {
+         width: 300px;
+      }
+    </style>
+</head>
 <body>
-
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
-Your browser does not support the HTML5 canvas tag.
-</canvas>
-
-<a id="downloadLnk" download="nfc.png">Download as image</a>
-
-<script src="./nfc.js">
-</script>
-
+    <h2>Simple rectangular spiral footprint generator</h2>
+    <form action="#" onsubmit="generate()">
+        <input type="text" id="dpi" placeholder="DPI (default=600)" /><br/>
+        <input type="text" id="margin" placeholder="Margin (default=20)" /><br/>
+        <input type="text" id="turns" placeholder="Turns (default=3)" /><br/>
+        <input type="text" id="ant_length" placeholder="Antenna length (default=10)" /><br/>
+        <input type="text" id="ant_width" placeholder="Antenna width (default=20)" /><br/>
+        <input type="text" id="cond_width" placeholder="Conductor width in mm (default=0.6)" /><br/>
+        <input type="text" id="cond_spacing" placeholder="Conductor spacing in mm (default=0.6)" /><br/>
+        <input type="submit" id="generate" value="Generate!" />
+        <a id="downloadLnk" href="nfc.png">Download PNG</a>
+    </form>
+    <script src="./nfc.js"></script>
 </body>
 </html>
 
