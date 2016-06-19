@@ -45,7 +45,7 @@ function nfc(c, margin, scale, turns, ant_length, ant_width, cond_width, cond_sp
             break;
         }
 
-        console.log(segment, segment%4, x0, y0, x1, y1);
+        //console.log(segment, segment%4, x0, y0, x1, y1);
         ctx.fillRect(
             Math.floor(scale*x0),
             Math.floor(scale*y0),
