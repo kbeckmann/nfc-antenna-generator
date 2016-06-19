@@ -70,9 +70,8 @@ function nfc(c, margin, scale, turns, ant_length, ant_width, cond_width, cond_sp
     }
 }
 
-var canvas = document.createElement('canvas');
+var canvas = document.getElementById('canvas');
 canvas.style.border = "1px solid";
-document.body.appendChild(canvas);
 
 
 document.getElementById("downloadLnk").addEventListener("click", function(){
