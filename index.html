@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-      input[type="text"]
-      {
-         width: 300px;
-      }
-    </style>
-</head>
-<body>
-    <h2>Simple rectangular spiral footprint generator</h2>
-    <form action="#">
-        <input type="text" id="dpi" placeholder="DPI (default=600)" /><br/>
-        <input type="text" id="margin" placeholder="Margin (default=20)" /><br/>
-        <input type="text" id="turns" placeholder="Turns (default=3)" /><br/>
-        <input type="text" id="ant_length" placeholder="Antenna length (default=10)" /><br/>
-        <input type="text" id="ant_width" placeholder="Antenna width (default=20)" /><br/>
-        <input type="text" id="cond_width" placeholder="Conductor width in mm (default=0.6)" /><br/>
-        <input type="text" id="cond_spacing" placeholder="Conductor spacing in mm (default=0.6)" /><br/>
-        <input type="submit" id="generate" value="Generate!" onsubmit="" />
-        <a id="downloadLnk" href="nfc.png">Download PNG</a><br/>
-        <canvas id="canvas"/>
-    </form>
-    <script src="./nfc.js"></script>
-</body>
-</html>
+<style>
+    input[type="text"]
+    {
+        width: 300px;
+    }
+</style>
+<h2>Simple rectangular spiral footprint generator</h2>
+<form onsubmit="return false;">
+    <input type="text" id="dpi" placeholder="DPI (default=600)" /><br/>
+    <input type="text" id="margin" placeholder="Margin (default=20)" /><br/>
+    <input type="text" id="turns" placeholder="Turns (default=3)" /><br/>
+    <input type="text" id="ant_length" placeholder="Antenna length (default=10)" /><br/>
+    <input type="text" id="ant_width" placeholder="Antenna width (default=20)" /><br/>
+    <input type="text" id="cond_width" placeholder="Conductor width in mm (default=0.6)" /><br/>
+    <input type="text" id="cond_spacing" placeholder="Conductor spacing in mm (default=0.6)" /><br/>
+    <input type="submit" id="generate" value="Generate!" onsubmit="" />
+    <a id="downloadLnk" href="nfc.png">Download PNG</a><br/>
+    <canvas id="canvas"/>
+</form>
+<script src="./nfc.js"></script>
 
 
