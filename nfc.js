@@ -91,7 +91,7 @@ function generate() {
     }
     nfc(canvas,
         value("margin", 20),
-        value("dpi", 600)/25.4,
+        value("dpi", 2400)/25.4,
         value("turns", 3),
         value("ant_length", 10),
         value("ant_width", 20),
