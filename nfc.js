@@ -138,7 +138,7 @@ function generate() {
         cond_spacing);
 
     var ant_inductance = inductance(ant_width, ant_height, cond_thickness, cond_width, cond_spacing, turns);
-    set_value("ant_inductance", ant_inductance);
+    document.getElementById("ant_inductance").innerHTML = ant_inductance;
 }
 document.getElementById("generate").addEventListener("click", generate);
 
