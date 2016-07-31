@@ -9,11 +9,13 @@
     <input type="text" id="dpi" placeholder="DPI (default=2400)" /><br/>
     <input type="text" id="margin" placeholder="Margin (default=20)" /><br/>
     <input type="text" id="turns" placeholder="Turns (default=3)" /><br/>
-    <input type="text" id="ant_length" placeholder="Antenna length (default=10)" /><br/>
+    <input type="text" id="ant_height" placeholder="Antenna height (default=10)" /><br/>
     <input type="text" id="ant_width" placeholder="Antenna width (default=20)" /><br/>
     <input type="text" id="cond_width" placeholder="Conductor width in mm (default=0.6)" /><br/>
+    <input type="text" id="cond_thickness" placeholder="Conductor thickness in mm (default=0.03556 (1oz))" /><br/>
     <input type="text" id="cond_spacing" placeholder="Conductor spacing in mm (default=0.6)" /><br/>
-    <input type="submit" id="generate" value="Generate!" onsubmit="" />
+    <input type="submit" id="generate" value="Generate!" onsubmit="" /><br/><br/>
+    <input type="text" id="ant_inductance" placeholder="Antenna inductance (uH)" readonly="readonly"/><br/><br/>
     <a id="downloadLnk" href="nfc.png">Download PNG</a><br/>
     <canvas id="canvas"/>
 </form>
