@@ -4,8 +4,6 @@ function nfc(c, margin, scale, turns, ant_length, ant_width, cond_width, cond_sp
     c.width = scale * ant_width + 2 * margin;
     c.style.width="100%";
     var ctx = c.getContext("2d");
-    //ctx.fillStyle = "#FFFF00";
-    //ctx.fillStyle = "#FFFFFF";
     ctx.fillStyle = "#FFFFFF";
     ctx.fillRect(0,0,scale * ant_width + 2 * margin, scale * ant_length + 2 * margin);
     ctx.translate(margin, margin);
@@ -87,16 +85,16 @@ canvas.addEventListener("click", function(){
 
 function inductance(ant_width, ant_height, cond_thickness, cond_width, cond_spacing, turns)
 {
-    const PI = 3.14159
-    const U0 = 1.25663e-6
-    const UR = 1
+    const PI = 3.14159;
+    const U0 = 1.25663e-6;
+    const UR = 1;
 
-    var a0 = ant_width / 1000
-    var b0 = ant_height / 1000
-    var t = cond_thickness / 1000
-    var w = cond_width / 1000
-    var g = cond_spacing / 1000
-    var n = turns
+    var a0 = ant_width / 1000;
+    var b0 = ant_height / 1000;
+    var t = cond_thickness / 1000;
+    var w = cond_width / 1000;
+    var g = cond_spacing / 1000;
+    var n = turns;
 
     var d = 2 * (t + w) / PI;
     var aAvg = a0 - n * (g + w);
@@ -107,8 +105,8 @@ function inductance(ant_width, ant_height, cond_thickness, cond_width, cond_spac
     var x4 = (aAvg + bAvg) / 4;
     var l = ((U0 * UR) / PI) * (x1 + x2 - x3 + x4) * Math.pow(n, 1.8);
     var l_uH = l * 1000000;
-    var l_uH_round = Math.round(l_uH * 1000) / 1000
-    return 'Inductance ' + l_uH_round + 'uH'
+    var l_uH_round = Math.round(l_uH * 1000) / 1000;
+    return l_uH_round;
 }
 
 function generate() {
@@ -121,14 +119,14 @@ function generate() {
         document.getElementById(id).value = val;
     }
 
-    var margin = value("margin", 20)
-    var dpi = value("dpi", 2400)/25.4
-    var turns = value("turns", 3)
-    var ant_height = value("ant_height", 10)
-    var ant_width = value("ant_width", 20)
-    var cond_width = value("cond_width", 0.6)
-    var cond_thickness = value("cond_thickness", 0.03556)
-    var cond_spacing = value("cond_spacing", 0.6)
+    var margin = value("margin", 20);
+    var dpi = value("dpi", 2400)/25.4;
+    var turns = value("turns", 3);
+    var ant_height = value("ant_height", 10) * value("ant_height_unit", 1);
+    var ant_width = value("ant_width", 20) * value("ant_width_unit", 1);
+    var cond_width = value("cond_width", 0.6) * value("cond_width_unit", 1);
+    var cond_thickness = value("cond_thickness", 0.03556) * value("cond_thickness_unit", 1);
+    var cond_spacing = value("cond_spacing", 0.6) * value("cond_spacing_unit", 1);
 
     nfc(canvas,
         margin,
@@ -139,8 +137,8 @@ function generate() {
         cond_width,
         cond_spacing);
 
-    var ant_inductance = inductance(ant_width, ant_height, cond_thickness, cond_width, cond_spacing, turns)
-    set_value("ant_inductance", ant_inductance)
+    var ant_inductance = inductance(ant_width, ant_height, cond_thickness, cond_width, cond_spacing, turns);
+    set_value("ant_inductance", ant_inductance);
 }
 document.getElementById("generate").addEventListener("click", generate);
 

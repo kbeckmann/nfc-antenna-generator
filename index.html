@@ -1,21 +1,97 @@
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
 <style>
     input[type="text"]
     {
         width: 300px;
     }
+    td {
+        padding: 10px;
+        border: 0;
+    }
 </style>
 <h2>Simple rectangular spiral footprint generator</h2>
 <form onsubmit="return false;">
-    <input type="text" id="dpi" placeholder="DPI (default=2400)" /><br/>
-    <input type="text" id="margin" placeholder="Margin (default=20)" /><br/>
-    <input type="text" id="turns" placeholder="Turns (default=3)" /><br/>
-    <input type="text" id="ant_height" placeholder="Antenna height (default=10)" /><br/>
-    <input type="text" id="ant_width" placeholder="Antenna width (default=20)" /><br/>
-    <input type="text" id="cond_width" placeholder="Conductor width in mm (default=0.6)" /><br/>
-    <input type="text" id="cond_thickness" placeholder="Conductor thickness in mm (default=0.03556 (1oz))" /><br/>
-    <input type="text" id="cond_spacing" placeholder="Conductor spacing in mm (default=0.6)" /><br/>
-    <input type="submit" id="generate" value="Generate!" onsubmit="" /><br/><br/>
-    <input type="text" id="ant_inductance" placeholder="Antenna inductance (uH)" readonly="readonly"/><br/><br/>
+<table id="calculator" style="align:center; margin:0 auto 1em !important; width:auto;">
+    <tr>
+        <td>DPI</td>
+        <td><input type="text" id="dpi" value="2400" /></td>
+        <td>dpi</td>
+    </tr>
+    <tr>
+        <td>Margin</td>
+        <td><input type="text" id="margin" value="20" /></td>
+        <td>pixels</td>
+    </tr>
+    <tr>
+        <td>Turns</td>
+        <td><input type="text" id="turns" value="3" /></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Antenna width</td>
+        <td><input type="text" id="ant_width" value="30" /></td>
+        <td>
+            <select id="ant_width_unit">
+                <option value="1.0" selected>mm</option>
+                <option value="0.0254">mil</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Antenna height</td>
+        <td><input type="text" id="ant_height" value="20" /></td>
+        <td>
+            <select id="ant_height_unit">
+                <option value="1.0" selected>mm</option>
+                <option value="0.0254">mil</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Track thickness</td>
+        <td><input type="text" id="cond_thickness" value="1.0" /></td>
+        <td>
+            <select id="cond_thickness_unit">
+                <option value="1.0">mm</option>
+                <option value="0.0254">mil</option>
+                <option value="0.03556" selected>oz</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Track width</td>
+        <td><input type="text" id="cond_width" value="8" /></td>
+        <td>
+            <select id="cond_width_unit">
+                <option value="1.0">mm</option>
+                <option value="0.0254" selected>mil</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Track spacing</td>
+        <td><input type="text" id="cond_spacing" value="8" /></td>
+        <td>
+            <select id="cond_spacing_unit">
+                <option value="1.0">mm</option>
+                <option value="0.0254" selected>mil</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Calculated inductance</td>
+        <td><input type="text" id="ant_inductance" value="Antenna inductance (uH)" readonly="readonly"/></td>
+        <td>µH</td>
+    </tr>
+    <tr>
+        <td><input type="submit" id="generate" value="Generate!" onsubmit="" colspan="3" /></td>
+    </tr>
+</table>
+
+    <br/><br/>
+    <br/><br/>
     <a id="downloadLnk" href="nfc.png">Download PNG</a><br/>
     <canvas id="canvas"/>
 </form>
