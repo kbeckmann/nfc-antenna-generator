@@ -2,6 +2,7 @@
 function nfc(c, margin, scale, turns, ant_length, ant_width, cond_width, cond_spacing) {
     c.height = scale * ant_length + 2 * margin;
     c.width = scale * ant_width + 2 * margin;
+    c.style.width="100%";
     var ctx = c.getContext("2d");
     //ctx.fillStyle = "#FFFF00";
     //ctx.fillStyle = "#FFFFFF";
